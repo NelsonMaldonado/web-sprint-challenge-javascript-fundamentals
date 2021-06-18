@@ -28,14 +28,28 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read.
 
 1. Briefly compare and contrast `.forEach` & `.map` (2-3 sentences max)
-
+In simple terms, .map returns a new array and .foreach doesn't return anything. Foreach does something for each item in the array.
 //
 
 2. Explain the difference between a callback and a higher order function.
 
+Higher order functions take in another functions as an argument. Call back functions are passed to another function with the expectation that the other function will call it. Callback function is initally only defined. 
+
 3. Can you explain what a closure is and how you used it in the counter function? 
 
+Closure is the combination of a function and the eviorenment within which that function was declared.  An example is when the function has access to any variable thats within the scope that it was created in. 
+
 4. Describe the four principles of the 'this' keyword.
+
+The 4 principals of this are: 
+
+1 Window binding (when we dont give any context to it, it returns the window the global object in node or undefined in strict mode)
+
+2 Implicit biding (is applied when you invoke a functin in an Object using the dot notation. The object on the left side of the dot.),
+
+3 Explicit binding (will immediately invoke the function, .call you pass in arguments 1 to 1, .apply will also immediatly invoke the function, .apply you pass in arguments as an array. Bind you pass in arguments 1 by 1 but it does not immediately invoke the function. it returns a brand new function that can be invoked late. All of these allow us to explicitly state what the 'this' keyword refers to.)
+
+4 New binding. (using the new keyword constructs a new object and 'this points to it. When a function is invoked as a constructor function using the new keyword 'this' points to the new object that's created. 
 
 5. Why do we need super() in an extended class?
 
