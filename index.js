@@ -66,10 +66,13 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(displayNames){
-    /*Your Code Here*/
+  function animalNames(fun){
+    const displayNames = [];
+    zooAnimals.forEach(function(item){
+     return displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`)
+    });
+    return displayNames;
   }
-  
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -77,9 +80,13 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+  function lowerCaseNames(fun){
+    const lowerCase = zooAnimals.map(function(item){
+      return item.animal_name.toLowerCase();
+    });
+    return lowerCase
+   }
+   console.log('Request 2', lowerCaseNames())
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -87,10 +94,13 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(){
+    const lowPopAnimals = zooAnimals.filter(function(item){
+      return item.population < 5;
+    });
+  return lowPopAnimals
   }
-  
+  console.log('Request 3', lowPopulationAnimals())
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -98,10 +108,13 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(fun){
+    const totalPop = zooAnimals.reduce(function(accumulator, item){
+        return accumulator + item.population;
+    },0)
+    return totalPop
   }
-  
+  console.log('Request 4', USApop())
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
